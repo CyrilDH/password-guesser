@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Résultats - Password Guesser</title>
+</head>
+<body>
+    <h1>Mots de passe générés</h1>
+    <p>Voici la liste des mots de passe générés en fonction des informations fournies :</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Mot de passe</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mot_de_passe in mots_de_passe %}
+                <tr>
+                    <td>{{ mot_de_passe }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Retourner à la page d'accueil</a>
+</body>
+</html>
