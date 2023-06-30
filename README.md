@@ -26,6 +26,9 @@ La méthode generate_mots_de_passe est la principale méthode qui génère les m
 Les mots de passe générés sont stockés dans une liste mots_de_passe.
 
 Si des formats de date sont disponibles, les mots de passe sont ensuite mélangés en utilisant le module MelangeurLettres, en prenant en compte les formats de date, les caractères spéciaux et le nombre de permutations spécifiés.
+Dans ce code, on peut voir un exemple de composition entre la classe "GenerateurMotsDePasse" et d'autres classes comme "DateHandler", "LeetConverter", "MelangeurLettres", et "CombinaisonIterateur".
+
+"GenerateurMotsDePasse" utilise ces classes pour effectuer différentes tâches, sans hériter directement d'elles, ce qui est une marque de la composition. Par exemple, "GenerateurMotsDePasse" utilise "DateHandler" pour obtenir une date relative, "LeetConverter" pour convertir les informations en Leet, "MelangeurLettres" pour mélanger les lettres, et "CombinaisonIterateur" pour créer des itérations de combinaisons. Ainsi, la classe "GenerateurMotsDePasse" est composée des fonctionnalités des autres classes, ce qui démontre le principe de composition en programmation orientée objet (POO).
 
 Finalement, la méthode retourne une liste contenant les mots de passe mélangés et les mots de passe non mélangés.
 
