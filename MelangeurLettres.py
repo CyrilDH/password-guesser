@@ -12,8 +12,10 @@ class MelangeurLettres:
 
         for date in formats_date:
             for _ in range(int(nb_permutations)):
-                mot_avec_caracteres_speciaux = mot + ''.join(random.choice(caracteres_speciaux_liste) for _ in
-                                                             range(random.randint(0, len(caracteres_speciaux_liste))))
+                # On évite de recréer la même chaîne de caractères à chaque itération en la stockant dans une variable
+                mot_avec_caracteres_speciaux = mot + ''.join(random.choices(caracteres_speciaux_liste,
+                                                                            k=random.randint(0,
+                                                                                             len(caracteres_speciaux_liste))))
                 perm = ''.join(
                     random.sample(mot_avec_caracteres_speciaux + date, len(mot_avec_caracteres_speciaux + date)))
                 mots_melanges.append(perm)
@@ -21,7 +23,7 @@ class MelangeurLettres:
 
     @staticmethod
     def alterner_casse(mot):
-        return ''.join([lettre.upper() if i % 2 == 0 else lettre.lower() for i, lettre in enumerate(mot)])
+        return ''.join(lettre.upper() if i % 2 == 0 else lettre.lower() for i, lettre in enumerate(mot))
 
     @staticmethod
     def inverser_mot(mot):
@@ -32,5 +34,6 @@ class MelangeurLettres:
         return hashlib.sha256(mot.encode()).hexdigest()
 
 
+# Utilisation
 melangeur = MelangeurLettres()
 mot_melange = melangeur.melanger('test', ['01-01-2023'], True, 10)

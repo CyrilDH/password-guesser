@@ -13,7 +13,6 @@ def index():
         ville = request.form.get('ville')
         caracteres_speciaux = 'caracteres_speciaux' in request.form
         nbr_permutation = request.form.get('nbr_permutation')
-
         donnees = {
             'nom': nom,
             'prenom': prenom,
