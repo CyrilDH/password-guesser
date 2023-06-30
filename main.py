@@ -1,19 +1,18 @@
 from flask import Flask, render_template, request
-import password_guesser
+from GenerateurMotsDePasse import GenerateurMotsDePasse
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print(request.method)
     if request.method == 'POST':
         nom = request.form.get('nom')
         prenom = request.form.get('prenom')
         date_naissance = request.form.get('date_naissance')
         ville = request.form.get('ville')
         caracteres_speciaux = 'caracteres_speciaux' in request.form
-        chiffres = 'chiffres' in request.form
+        nbr_permutation = request.form.get('nbr_permutation')
 
         donnees = {
             'nom': nom,
@@ -21,10 +20,10 @@ def index():
             'date_naissance': date_naissance,
             'ville': ville,
             'caracteres_speciaux': caracteres_speciaux,
-            'chiffres': chiffres
+            'nbr_permutation': nbr_permutation
         }
-
-        mots_de_passe = password_guesser.generate_mots_de_passe(donnees)
+        generateur = GenerateurMotsDePasse()
+        mots_de_passe = generateur.generate_mots_de_passe(donnees)
 
         return render_template('resultats.html', mots_de_passe=mots_de_passe)
 

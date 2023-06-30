@@ -20,6 +20,7 @@
         label, input, select, button {
             margin-bottom: 10px;
         }
+
     </style>
 </head>
 <body>
@@ -42,10 +43,9 @@
         <input type="checkbox" id="caracteres_speciaux" name="caracteres_speciaux">
         <label for="caracteres_speciaux">Inclure des caractères spéciaux</label>
     </div>
-    <div>
-        <input type="checkbox" id="chiffres" name="chiffres">
-        <label for="chiffres">Inclure des chiffres</label>
-    </div>
+    <label for="nbr_permutation">Nombre de permutation :</label>
+    <input type="number" id="nbr_permutation" name="nbr_permutation" required>
+
     <input type="submit" value="Générer les mots de passe">
 </form>
 
