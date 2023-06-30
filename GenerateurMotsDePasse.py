@@ -14,6 +14,7 @@ class GenerateurMotsDePasse:
         self.formats_date = []
         self.toutes_informations_melangees = ""
         self.toutes_informations_melangees_leet = ""
+        self.iterateur = None
 
     def _init_date(self):
         if self.donnees['date_naissance']:
@@ -36,7 +37,7 @@ class GenerateurMotsDePasse:
         mots_de_passe = list(iterateur.iterate())
 
         mots_de_passe_melanges = []
-        if self.formats_date:  # N'ajoutez des dates que si la liste n'est pas vide
+        if self.formats_date:
             mots_de_passe_melanges = [
                 MelangeurLettres(mot_de_passe, self.formats_date, self.donnees['caracteres_speciaux'],
                                  self.donnees['nbr_permutation']).melanger() for mot_de_passe in mots_de_passe]

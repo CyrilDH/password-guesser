@@ -1,4 +1,4 @@
-CombinaisonIterateur
+### CombinaisonIterateur
 
 Ce code génère des combinaisons de mots de passe en utilisant des informations fournies, en alternant la casse des lettres et éventuellement en incluant des caractères spéciaux.
 
@@ -9,9 +9,7 @@ La classe CombinaisonIterateur est définie avec un constructeur __init__ qui in
 La méthode iterate génère les combinaisons de mots de passe en itérant sur les informations fournies. Elle crée un objet MotHandler pour chaque information et utilise la méthode alterner_casse pour obtenir une liste de mots avec des alternances de casse. Ensuite, si des caractères spéciaux sont spécifiés, le code génère des combinaisons de mots de passe en utilisant la méthode product de itertools et en ajoutant les caractères spéciaux. Sinon, il génère simplement des combinaisons avec les mots obtenus. Les mots de passe sont ensuite mélangés plusieurs fois à l'aide de random.shuffle et renvoyés via la fonction yield.
 
 
-GenerateurMotsDePasse
-
-Ceci résume brièvement le fonctionnement du code pour générer des combinaisons de mots de passe basées sur les informations fournies.
+### GenerateurMotsDePasse
 
 Ce code est un générateur de mots de passe qui utilise différentes informations fournies pour créer des combinaisons de mots de passe. Voici une explication concise du code :
 
@@ -33,7 +31,7 @@ Finalement, la méthode retourne une liste contenant les mots de passe mélangé
 
 En résumé, ce générateur de mots de passe utilise des informations fournies, les mélange, les convertit en langage "leet" et génère des combinaisons de mots de passe en prenant en compte les formats de date et les caractères spéciaux.
 
-MelangeurLettres 
+### MelangeurLettres 
 
 Ce code est une classe MelangeurLettres qui effectue différentes opérations sur un mot donné. Voici une explication concise du code :
 
@@ -58,7 +56,7 @@ La méthode hasher_mot utilise l'algorithme de hachage SHA256 pour hasher le mot
 
 En résumé, cette classe MelangeurLettres permet de mélanger un mot en générant des permutations avec des caractères spéciaux, en alternant la casse des lettres, en inversant le mot et en le hachant avec SHA256. Elle peut également prendre en compte des formats de date pour générer des permutations mélangées spécifiques.
 
-MotHandler 
+### MotHandler 
 
 Ce code définit une classe MotHandler qui effectue différentes opérations sur un mot donné. Voici une explication concise du code :
 
@@ -80,7 +78,7 @@ La méthode generer_permutations génère toutes les permutations possibles du m
 
 En résumé, cette classe MotHandler permet d'effectuer des opérations sur un mot donné, telles que l'alternance de casse des lettres, l'inversion du mot et la génération de toutes les permutations possibles.
 
-LeetConverter
+### LeetConverter
 
 Ce code définit une classe LeetConverter qui permet de convertir une chaîne de caractères en langage "leet". Voici une explication concise du code :
 
@@ -100,7 +98,7 @@ La méthode retourne la chaîne de caractères chaine_leet convertie en langage 
 
 En résumé, cette classe LeetConverter permet de convertir une chaîne de caractères en langage "leet" en appliquant des substitutions aléatoires sur certains caractères spécifiques.
 
-DateHandler
+### DateHandler
 
 Ce code définit une classe DateHandler qui contient une méthode statique relater_date. Voici une explication concise du code :
 

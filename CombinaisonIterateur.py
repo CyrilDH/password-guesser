@@ -26,6 +26,6 @@ class CombinaisonIterateur:
     def shuffle_password(self, password):
         print(self.donnees['nbr_mot_de_passe'])
         password_list = list(password)
-        for _ in range(self.donnees['nbr_mot_de_passe']):  # shuffle 10 times
+        for _ in range(self.donnees['nbr_mot_de_passe']):
             random.shuffle(password_list)
             yield ''.join(password_list)
